@@ -1,7 +1,10 @@
-#!/usr/bin/env ruby  
-
-#shebang line, tells interpreter we are running ruby
+#!/usr/bin/env ruby
 
 require_relative "../environment"
 
 puts "hi"
+
+cli_instance = CLI.new
+cli_instance.start
+
+# could also do CLI.new.start
