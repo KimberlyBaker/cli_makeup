@@ -1,1 +1,7 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env ruby  
+
+#shebang line, tells interpreter we are running ruby
+
+require_relative "../environment"
+
+puts "hi"
