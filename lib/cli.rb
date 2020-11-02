@@ -16,7 +16,7 @@ class CLI
     # if user says yes
     if user_input == "yes" || user_input == "y"
       puts "Good choice!"
-      #display the list
+      # display the list
       
     end
     
