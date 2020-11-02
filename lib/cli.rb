@@ -34,8 +34,8 @@ class CLI
     # access all types of makeup
     # binding.pry
     # print each one out
-    Makeup.all.each.with_index(1) do |makeup, index|
-      puts "#{index}. #{makeup.name}"
+    Makeup.all.each.with_index(1) do |brand, index|
+      puts "#{index}. #{brand.name}"
     end
   end
   
@@ -51,19 +51,19 @@ class CLI
       index = gets.strip.to_i - 1
     end
     
-    makeup_instance = Makeup.all[index]
+    brand_instance = Makeup.all[index]
     
-    display_makeup_details(makeup_instance)
+    display_makeup_details(brand_instance)
     
     
   end
   
-  def display_makeup_details(makeup)
+  def display_makeup_details(brand)
     sleep(1)
     puts "\n"
-    puts makeup.name
-    puts "Produc Type: " + makeup.product_type
-    puts "Description: " + makeup.description
+    puts brand.name
+    puts "Produc Type: " + brand.product_type
+    puts "Description: " + brand.description
   end
   
 end

@@ -7,18 +7,18 @@ class API
       hash = JSON.parse(response)
       
       array_of_makeup = hash[1]["brand"]
-      # binding.pry
-      
+        binding.pry
       # name
       # description
       # product type
-      # :name, :description, :product_type
+      # :brand, :description, :product_type
       
-      array_of_makeup.each do |makeup_hash|
+      array_of_makeup.each do |brand_hash|
+          # binding.pry
         makeup = Makeup.new
-        makeup.name = makeup_hash["name"]
-        makeup.description = makeup_hash["description"]
-        makeup.product_type = makeup_hash["product_type"]
+        brand.name = brand_hash["brand"]
+        brand.description = brand_hash["description"]
+        brand.product_type = brand_hash["product_type"]
       end
   end
       
