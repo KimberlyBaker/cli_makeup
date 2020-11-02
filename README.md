@@ -1,3 +1,3 @@
-# Movies
+# Makeup
 
-An app with a list of movie reviews.
+An app about Cover Girl makeup products.
