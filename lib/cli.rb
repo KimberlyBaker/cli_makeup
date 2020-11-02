@@ -18,6 +18,7 @@ class CLI
       puts "Good choice!"
       # display the list
       display_list_of_makeup
+      ask_user_for_makeup_choice
     end
     
   end
@@ -26,9 +27,17 @@ class CLI
     # access all types of makeup
     # binding.pry
     # print each one out
-    Makeup.all.each do |makeup|
-      puts makeup.name
+    Makeup.all.each.with_index(1) do |makeup, index|
+      puts "#{index}. #{makeup.name}"
     end
+  end
+  
+  def ask_user_for_makeup_choice
+    # ask user for choice
+    puts "Enter the number of the makeup product you'd like to know more about."
+    index = gets.strip.to_i - 1
+    
+    makeup_instance = Makeup.all[index]
   end
   
 end

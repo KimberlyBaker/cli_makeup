@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+# shebang line goes here
 
 require_relative "../environment"
 
