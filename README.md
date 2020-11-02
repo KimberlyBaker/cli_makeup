@@ -1,3 +1,3 @@
 # Library
 
-An app about library locations.
+An app about the largest libraries in the United States.
