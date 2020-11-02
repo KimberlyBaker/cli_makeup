@@ -2,7 +2,7 @@ class CLI
   
   def start
     puts "Welcome."
-    API.fetch_products
+    API.fetch_brand
     self.menu
   end
   
