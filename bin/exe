@@ -7,4 +7,4 @@ puts "Hi!"
 cli_instance = CLI.new
 cli_instance.start
 
-#could also do CLI.new.start
+# could also do CLI.new.start
