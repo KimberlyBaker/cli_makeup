@@ -2,7 +2,7 @@ class CLI
   
   def start
     puts "Welcome"
-    API.fetch_makeup
+    API.fetch_makeups
   end
 
 end
