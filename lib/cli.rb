@@ -17,8 +17,8 @@ class CLI
     if user_input == "yes" || user_input == "y"
       puts "Good choice!"
       # display the list
-      display_list_of_makeup
-      ask_user_for_makeup_choice
+      display_list_of_brand
+      ask_user_for_brand_choice
       
       sleep(2)
       puts "\n"
