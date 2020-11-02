@@ -19,6 +19,13 @@ class CLI
       # display the list
       display_list_of_makeup
       ask_user_for_makeup_choice
+      
+      sleep(2)
+      puts "\n"
+      
+      menu
+    else
+      puts "Goodbye."
     end
     
   end
@@ -38,7 +45,7 @@ class CLI
     index = gets.strip.to_i - 1
     
     # index valid? number between 0 and 13
-    until index.between?(0, Makeup.all.length -1)
+    until index.between?(0, Makeup.all.length - 1)
       # keep asking for user input
       puts "Sorry, invalid input. Choose a valid number."
       index = gets.strip.to_i - 1
