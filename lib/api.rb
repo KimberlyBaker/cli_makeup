@@ -6,7 +6,7 @@ class API
       response = Net::HTTP.get(uri)
       hash = JSON.parse(response)
       
-      array_of_makeup = hash[1]["makeup"]
+      array_of_makeup = hash[1]["brand"]
       # binding.pry
       
       # name
