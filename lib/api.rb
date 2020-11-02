@@ -1,7 +1,7 @@
 class API
   
-  def self.fetch_libraries
-      url = "https://www.fairfaxcounty.gov/library/branches"
+  def self.fetch_movies
+      url = "https://www.themoviedb.org/documentation/api"
       binding.pry
       uri = URI(url)
       response = Net::HTTP.get(uri)

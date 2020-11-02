@@ -1,6 +1,6 @@
 require_relative "./lib/api.rb"
 require_relative "./lib/cli.rb"
-require_relative "./lib/library.rb"
+require_relative "./lib/movies.rb"
 
 require "pry"
 require "net/http"   # allows us to make requests from api

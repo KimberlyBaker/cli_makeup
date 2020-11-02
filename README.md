@@ -1,3 +1,3 @@
-# Library
+# Movies
 
-An app about the largest libraries in the United States.
+An app with a list of movie reviews.
