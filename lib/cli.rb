@@ -2,11 +2,11 @@ class CLI
   
   def start
     puts "Welcome."
-    API.fetch_brand
-    self.menu
+    API.fetch_name
+    self.list
   end
   
-  def menu
+  def list
     # give user option to see list of Cover Girl makeup
     puts "Would you like to see the list of Cover Girl makeup?"
     puts "Type 'yes' to continue or any another key to exit."
@@ -17,62 +17,54 @@ class CLI
     if user_input == "yes" || user_input == "y"
       puts "\n"
       puts "Good choice!"
-      # display the list of brands
-      list_of_brands
-      ask_user_for_brand_choice
+      # display the list of product names
+      list_of_names
+      ask_user_for_name
       
       sleep(2)
       puts "\n"
       
-      menu
+      list
     else
       puts "Goodbye."
     end
     
   end
   
-  def list_of_brands
-    # access all types of makeup brands
+  def list_of_names
+    # access all types of makeup names
     # binding.pry
     # print each one out
-    Makeup.all.each.with_index(1) do |brand, index|
-      puts "#{index}. #{brand}"
+    Makeup.all.each.with_index(1) do |name, index|
+      puts "#{index}. #{name}"
     end
   end
   
-  def ask_user_for_brand_choice
+  def ask_user_for_name
     # ask user for choice
     puts "Enter the number of the makeup product you'd like to know more about."
     index = gets.strip.to_i - 1
     
     # index valid? number between 0 and 19
-    until index.between?(0, brand.all.length - 1)
+    until index.between?(0, name.all.length - 1)
       # keep asking for user input
       puts "Sorry, invalid input. Choose a valid number."
       index = gets.strip.to_i - 1
     end
     
-    brand_instance = brand.all[index]
+    name_instance = name.all[index]
     
-    display_brand_details(brand_instance)
+    display_name_details(name_instance)
     
     
   end
   
-  def display_brand_details(brand)
+  def display_name_details(name)
     sleep(1)
     puts "\n"
-    puts brand.name
-    puts "Produc Type: " + brand.product_type
-    puts "Description: " + brand.description
+    puts name.name
+    puts "Produc Type: " + name.product_type
+    puts "Description: " + name.description
   end
   
 end
-
-
-
-
-
-
-
-
