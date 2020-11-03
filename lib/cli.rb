@@ -35,7 +35,7 @@ class CLI
     # access all types of makeup names
     # binding.pry
     # print each one out
-    Brand.all.each.with_index(1) do |name, index|
+    Makeup.all.each.with_index(1) do |name, index|
       puts "#{index}. #{name}"
     end
   end
@@ -46,13 +46,13 @@ class CLI
     index = gets.strip.to_i - 1
     
     # index valid? number between 0 and 19
-    until index.between?(0, Brand.all.length - 1)
+    until index.between?(0, Makeup.all.length - 1)
       # keep asking for user input
       puts "Sorry, invalid input. Choose a valid number."
       index = gets.strip.to_i - 1
     end
     
-    brand_instance = Brand.all[index]
+    brand_instance = Makeup.all[index]
     
     display_brand_details(brand_instance)
     

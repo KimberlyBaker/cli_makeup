@@ -1,4 +1,4 @@
-class Brand
+class Makeup
   attr_accessor :name, :description, :product_type
   
   @@all = []
