@@ -3,23 +3,23 @@ class CLI
   def start
     puts "Welcome."
     API.fetch_brand
-    self.menu
+    self.list
   end
   
-  def menu
+  def list
     # give user option to see list of Cover Girl makeup
-    puts "Would you like to see the list of Cover Girl makeup?"
-    puts "Type ' y' or yes' to continue. Press any another key to exit."
+    puts "Would you like to see the list of Cover Girl products?"
+    puts "Type ' y' for yes to continue. Or press any another key to exit."
     
     user_input = gets.strip.downcase
     
     # if user says yes
-    if user_input == "yes" || user_input == "y"
+    if user_input == "y"
       puts "\n"
-      puts "Good choice!"
+      puts "Excellent!"
       # display the list of product names
-      list_of_makeup
-      ask_user_for_makeup_choice
+      list_of_covergirl_products
+      ask_user_for_product_choice
       
       sleep(2)
       puts "\n"
@@ -31,16 +31,14 @@ class CLI
     
   end
   
-  def list_of_makeup
-    # access all types of makeup names
+  def list_of_covergirl_products
     # binding.pry
-    # print each one out
     Makeup.all.each.with_index(1) do |name, index|
       puts "#{index}. #{name}"
     end
   end
   
-  def ask_user_for_makeup_choice
+  def ask_user_for_product_choice
     # ask user for choice
     puts "Enter the number of the makeup product you'd like to know more about."
     index = gets.strip.to_i - 1
