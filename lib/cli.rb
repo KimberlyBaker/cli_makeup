@@ -9,7 +9,7 @@ class CLI
   def list
     # give user option to see list of Cover Girl makeup
     puts "Would you like to see the list of Cover Girl makeup?"
-    puts "Type ' y' or yes' to continu. Press any another key to exit."
+    puts "Type ' y' or yes' to continue. Press any another key to exit."
     
     user_input = gets.strip.downcase
     
@@ -35,7 +35,7 @@ class CLI
     # access all types of makeup names
     # binding.pry
     # print each one out
-    Makeup.all.each.with_index(1) do |name, index|
+    Brand.all.each.with_index(1) do |name, index|
       puts "#{index}. #{name}"
     end
   end
@@ -45,14 +45,14 @@ class CLI
     puts "Enter the number of the makeup product you'd like to know more about."
     index = gets.strip.to_i - 1
     
-    # index valid? number between 0 and 12
-    until index.between?(0, Makeup.all.length - 1)
+    # index valid? number between 0 and 19
+    until index.between?(0, Brand.all.length - 1)
       # keep asking for user input
       puts "Sorry, invalid input. Choose a valid number."
       index = gets.strip.to_i - 1
     end
     
-    brand_instance = Makeup.all[index]
+    brand_instance = Brand.all[index]
     
     display_brand_details(brand_instance)
     
