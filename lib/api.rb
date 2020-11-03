@@ -16,8 +16,9 @@ class API
       array_of_name.each do |name_hash|
           # binding.pry
         name = Makeup.new
-        name.description = name_hash[1]
-        name.product_type = name_hash[1]
+        name.name = name_hash["name"]
+        name.description = name_hash["description"]
+        name.product_type = name_hash["product_type"]
       end
   end
       

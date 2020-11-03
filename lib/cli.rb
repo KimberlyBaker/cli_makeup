@@ -45,14 +45,14 @@ class CLI
     puts "Enter the number of the makeup product you'd like to know more about."
     index = gets.strip.to_i - 1
     
-    # index valid? number between 0 and 19
-    until index.between?(0, name.all.length - 1)
+    # index valid? number between 0 and 12
+    until index.between?(0, Makeup.all.length - 1)
       # keep asking for user input
       puts "Sorry, invalid input. Choose a valid number."
       index = gets.strip.to_i - 1
     end
     
-    name_instance = name.all[index]
+    name_instance = Makeup.all[index]
     
     display_name_details(name_instance)
     
@@ -62,8 +62,8 @@ class CLI
   def display_name_details(name)
     sleep(1)
     puts "\n"
-    puts name.name
-    puts "Produc Type: " + name.product_type
+    puts "Name: " + name.name
+    puts "Product Type: " + name.product_type
     puts "Description: " + name.description
   end
   
