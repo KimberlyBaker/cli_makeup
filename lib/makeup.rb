@@ -1,5 +1,5 @@
 class Makeup
-  attr_accessor :name, :description, :product_type
+  attr_accessor :name, :product_type, :description
   
   @@all = []
   

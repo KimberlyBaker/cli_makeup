@@ -33,8 +33,8 @@ class CLI
   
   def list_of_covergirl_products
     # binding.pry
-    Makeup.all.each.with_index(1) do |name, index|
-      puts "#{index}. #{name}"
+    Makeup.all.each do |brand|
+      puts brand.name
     end
   end
   
