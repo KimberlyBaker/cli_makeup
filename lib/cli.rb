@@ -26,7 +26,7 @@ class CLI
       
       list
     else
-      puts "Goodbye."
+      puts "Thank you and goodbye."
     end
     
   end
