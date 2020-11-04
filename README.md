@@ -1,3 +1,3 @@
 # Makeup
 
-An app to see a list of Cover Girl makeup products.
+An app to see a list of Cover Girl lipsticks.

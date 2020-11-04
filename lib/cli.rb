@@ -2,13 +2,13 @@ class CLI
   
   def start
     puts "Welcome."
-    API.fetch_brand
+    API.fetch_lipstick
     self.list
   end
   
   def list
-    # give user option to see list of Cover Girl makeup
-    puts "Would you like to see the list of Cover Girl products?"
+    # give user option to see list of Cover Girl lipsticks
+    puts "Would you like to see the list of Cover Girl lipsticks?"
     puts "Type ' y' for yes to continue. Or press any another key to exit."
     
     user_input = gets.strip.downcase
@@ -17,9 +17,9 @@ class CLI
     if user_input == "y"
       puts "\n"
       puts "Excellent!"
-      # display the list of product names
-      list_of_covergirl_products
-      ask_user_for_product_choice
+      # display the list of lipstick names
+      list_of_covergirl_lipsticks
+      ask_user_for_lipstick_choice
       
       sleep(2)
       puts "\n"
@@ -31,38 +31,38 @@ class CLI
     
   end
   
-  def list_of_covergirl_products
+  def list_of_covergirl_lipsticks
     # binding.pry
-    Makeup.all.each do |brand|
-      puts brand.name
+    Makeup.all.each do |lipstick|
+      puts lipstick.name
     end
   end
   
-  def ask_user_for_product_choice
+  def ask_user_for_lipstick_choice
     # ask user for choice
-    puts "Enter the number of the makeup product you'd like to know more about."
+    puts "Enter the number of the lipstick you'd like to know more about."
     index = gets.strip.to_i - 1
     
-    # index valid? number between 0 and 19
+    # index valid? number between 0 and 6
     until index.between?(0, Makeup.all.length - 1)
       # keep asking for user input
       puts "Sorry, invalid input. Choose a valid number."
       index = gets.strip.to_i - 1
     end
     
-    brand_instance = Makeup.all[index]
+    lipstick_instance = Makeup.all[index]
     
-    display_brand_details(brand_instance)
+    display_lipstick_details(lipstick_instance)
     
     
   end
   
-  def display_brand_details(brand)
+  def display_lipstick_details(lipstick)
     sleep(1)
     puts "\n"
-    puts "Name: " + brand.name
-    puts "Product Type: " + brand.product_type
-    puts "Description: " + brand.description
+    puts "Name: " + lipstick.name
+    puts "Product Type: " + lipstick.product_type
+    puts "Description: " + lipstick.description
   end
   
 end
