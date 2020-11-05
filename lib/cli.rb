@@ -33,8 +33,8 @@ class CLI
   
   def list_of_covergirl_lipsticks
     # binding.pry
-    Makeup.all.each do |lipstick|
-      puts lipstick.name
+    Makeup.all.each.with_index(1) do |name, index|
+      puts "#{index}. #{name}"
     end
   end
   
@@ -43,7 +43,7 @@ class CLI
     puts "Enter the number of the lipstick you'd like to know more about."
     index = gets.strip.to_i - 1
     
-    # index valid? number between 0 and 6
+    # index valid? number between 0 and 21
     until index.between?(0, Makeup.all.length - 1)
       # keep asking for user input
       puts "Sorry, invalid input. Choose a valid number."
@@ -57,12 +57,12 @@ class CLI
     
   end
   
-  def display_lipstick_details(lipstick)
+  def display_lipstick_details(lipstick_instance)
     sleep(1)
     puts "\n"
-    puts "Name: " + lipstick.name
-    puts "Product Type: " + lipstick.product_type
-    puts "Description: " + lipstick.description
+    puts "Name: " + lipstick_instance.name
+    puts "Product Type: " + lipstick_instance.product_type
+    puts "Description: " + lipstick_instance.description
   end
   
 end
