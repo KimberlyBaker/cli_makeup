@@ -14,7 +14,7 @@ class API
       # :name, :product_type, :description
       
       array_of_lipstick.each_with_index do |lipstick_hash|
-        lipstick = Makeup.new
+        lipstick = Makeup.new('name', 'product_type', 'description')
         lipstick.name = lipstick_hash[1]
         lipstick.product_type = lipstick_hash[1]
         lipstick.description = lipstick_hash[1]
