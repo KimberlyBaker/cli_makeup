@@ -1,7 +1,9 @@
 class CLI
   
   def start
-    puts "Welcome."
+    puts "\n"
+    puts "Welcome!"
+    puts "\n"
     API.fetch_lipstick
     self.list
   end
@@ -17,6 +19,7 @@ class CLI
     if user_input == "y"
       puts "\n"
       puts "Excellent!"
+      puts "\n"
       # display the list of lipstick names
       list_of_covergirl_lipsticks
       ask_user_for_lipstick_choice
@@ -27,19 +30,21 @@ class CLI
       list
     else
       puts "Bye! I hope you found your lipstick!"
+      puts "\n"
     end
     
   end
   
   def list_of_covergirl_lipsticks
     # binding.pry
-    Makeup.all.each_with_index(1) do |name, index|
+    Makeup.all.each_with_index do |name, index|
       puts "#{index}. #{name}"
     end
   end
   
   def ask_user_for_lipstick_choice
     # ask user for choice
+    puts "\n"
     puts "Enter the number of the lipstick you'd like to know more about."
     index = gets.strip.to_i - 1
     
@@ -60,9 +65,11 @@ class CLI
   def display_lipstick_details(lipstick_instance)
     sleep(1)
     puts "\n"
-    puts "Name: " + lipstick_instance.name(1)
-    puts "Product Type: " + lipstick_instance.product_type(1)
-    puts "Description: " + lipstick_instance.description(1)
+    puts "Name: " + lipstick_instance.name
+    puts "\n"
+    puts "Product Type: " + lipstick_instance.product_type
+    puts "\n"
+    puts "Description: " + lipstick_instance.description
   end
   
 end
