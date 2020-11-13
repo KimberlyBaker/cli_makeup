@@ -5,7 +5,7 @@ class CLI
     puts "Welcome!"
     puts "\n"
     API.fetch_lipstick
-    self.list
+    Makeup.list
   end
   
   def list
