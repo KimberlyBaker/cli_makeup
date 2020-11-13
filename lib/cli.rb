@@ -5,13 +5,15 @@ class CLI
     puts "Welcome!"
     puts "\n"
     API.fetch_lipstick
-    Makeup.list
+    self.list
   end
   
   def list
     # give user option to see list of Cover Girl lipsticks
+    puts "*********************************************************************"
     puts "Would you like to see the list of Cover Girl lipsticks?"
     puts "Type ' y' for yes to continue. Or press any another key to exit."
+    puts "*********************************************************************"
     
     user_input = gets.strip.downcase
     
@@ -45,13 +47,17 @@ class CLI
   def ask_user_for_lipstick_choice
     # ask user for choice
     puts "\n"
+    puts "*********************************************************************"
     puts "Enter the number of the lipstick you'd like to know more about."
+    puts "*********************************************************************"
     index = gets.strip.to_i - 1
     
     # index valid? number between 0 and 20
     until index.between?(0, Makeup.all.length - 1)
       # keep asking for user input
+      puts "*********************************************************************"
       puts "Sorry, invalid input. Choose a valid number."
+      puts "*********************************************************************"
       index = gets.strip.to_i - 1
     end
     
@@ -65,11 +71,13 @@ class CLI
   def display_lipstick_details(lipstick_instance)
     sleep(1)
     puts "\n"
+    puts "*********************************************************************"
     puts "Name: " + lipstick_instance.name
     puts "\n"
     puts "Product Type: " + lipstick_instance.product_type
     puts "\n"
     puts "Description: " + lipstick_instance.description
+    puts "*********************************************************************"
   end
   
 end
